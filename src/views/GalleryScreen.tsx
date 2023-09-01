@@ -17,7 +17,7 @@ const defaultGalleryFiltes: GalleryFilters = {
 const GalleryScreen = () => {
   const [galleryFilters, setGalleryFilters] = useState<GalleryFilters>(defaultGalleryFiltes);
   const [includeVirals, setIncludeVirals] = useState<boolean>(true);
-  const [showVideos, setShowVideos] = useState<boolean>(true);
+  const [showVideos, setShowVideos] = useState<boolean>(false);
 
   const handleIncludeViralsChange = (): void => {
     setIncludeVirals((prev) => !prev);
