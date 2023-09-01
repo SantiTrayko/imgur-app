@@ -6,10 +6,6 @@ interface CardProps {
   children: React.ReactNode;
 }
 
-const PostItemStyles = `
-
-`;
-
 const PostItemMedia = styled.div`
   height: 100%;
   display: block;
@@ -23,10 +19,6 @@ const PostItemMedia = styled.div`
   background-color: #666171;
   transition: box-shadow 250ms;
   -webkit-transition: box-shadow 250ms;
-`;
-
-const PostItemContainer = styled.div`
-  /* height: 233px; */
 `;
 
 const MediaContainer = styled.div`
@@ -55,15 +47,15 @@ const CardContent = styled.div`
 `;
 
 const CardTitle = styled.h4`
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 700;
   margin: 0;
   color: #f4eeff;
-  `;
+`;
 
 const CardDescription = styled.p`
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 12px;
   font-weight: 300;
   margin: 6px 0;
