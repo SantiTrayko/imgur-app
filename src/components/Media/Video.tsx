@@ -1,8 +1,13 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 interface VideoProps {
   url: string;
-  title: string;
+}
+
+interface CustomVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
+  isLoaded: boolean;
+  width: string;
 }
 
 const VideoWrapper = styled.div`
@@ -11,13 +16,28 @@ const VideoWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const Video: React.FC<VideoProps> = ({ url, title }) => {
+const VideoElement = styled.video<CustomVideoProps>`
+  width: ${(props) => (props.width ? props.width : "100%")};
+  height: auto;
+  transition: filter 0.5s ease-in-out;
+  filter: ${(props) => (props.isLoaded ? "none" : "blur(8px)")};
+`;
+
+const Video: React.FC<VideoProps> = ({ url }) => {
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
   return (
     <VideoWrapper>
-      <video width={300} autoPlay draggable="false" loop playsInline muted>
-        <source src={url} type="video/mp4" />
-        Tu navegador no soporta el elemento de video.
-      </video>
+      <VideoElement
+        draggable="false"
+        loop
+        playsInline
+        muted
+        autoPlay
+        src={url}
+        isLoaded={isLoaded}
+        onLoadedData={() => setIsLoaded(true)}
+        width="300px"
+      />
     </VideoWrapper>
   );
 };

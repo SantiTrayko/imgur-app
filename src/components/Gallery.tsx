@@ -38,7 +38,7 @@ const GalleryItem = styled.div`
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
   &:hover {
-    transform: scale(1.05); /* Escalar ligeramente en el hover */
+    transform: scale(1.05);
   }
 `;
 
@@ -99,9 +99,8 @@ const Gallery: React.FC<GalleryProps> = ({ currentGalleryFilters, includeVirals,
 
       if (type.includes(MediaFormat.Video) && !showVideos) return null;
 
-      if (type.includes(MediaFormat.Image))
-        children = <Image title={title || ""} url={link} height="233px" width="300px" />;
-      if (type.includes(MediaFormat.Video)) children = <Video title={title || ""} url={link} />;
+      if (type.includes(MediaFormat.Image)) children = <Image url={link} height="233px" width="300px" />;
+      if (type.includes(MediaFormat.Video)) children = <Video url={link} />;
       return (
         <GalleryItem
           key={id}
