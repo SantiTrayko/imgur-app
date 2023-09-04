@@ -1,3 +1,29 @@
+# Image Gallery Application
+
+This is an image gallery application that directly consumes the Imgur API. It provides various filters available in the top bar to refine your gallery view.
+
+## Application Architecture
+
+The application's architecture is structured using the Create React App boilerplate. It leverages Redux Toolkit Query for handling API queries to Imgur. The codebase is also optimized to minimize unnecessary renders.
+
+## Getting Started
+
+To initialize the application, follow these steps:
+
+1. Install the necessary dependencies using either of the following commands:
+
+npm install
+
+or
+
+yarn install
+
+2. Create a `.env` file based on the provided `.env.example` file and set the required environment variables with their respective values.
+
+## Usage
+
+Once the application is set up and the environment variables are configured, you can start the development server and explore the image gallery.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
